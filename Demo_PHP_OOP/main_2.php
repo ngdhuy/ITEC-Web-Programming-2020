@@ -1,7 +1,10 @@
 <?php
-    include_once "Animal.php";
-    include_once "Dog.php";
-    include_once "Cat.php";
+include "Animal.php";
+include "Dog.php";
+include "Cat.php";
+
+use Animal\Dog;
+use Animal\Cat;
 
     $a = []; // Animal;
 

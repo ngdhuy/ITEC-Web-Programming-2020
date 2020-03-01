@@ -1,7 +1,11 @@
 <?php
-    include_once ('Animal.php');
-    include_once ('Dog.php');
-    include_once ('Cat.php');
+    include "Animal.php";
+    include "Dog.php";
+    include "Cat.php";
+    
+    use Animal\Animal;
+    use Animal\Dog;
+    use Animal\Cat;
 
     // $a = new Animal();
     // echo $a->id." - ".$a->animal_type;
