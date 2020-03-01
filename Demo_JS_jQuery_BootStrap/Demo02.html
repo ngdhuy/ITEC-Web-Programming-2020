@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo JavaScript (cont)</title>
+</head>
+<body>
+    <h1>Demo HTML DOM</h1>
+    <button type='button' class='add'>Add</button>
+    <button type='button' class='deleteOne'>Delete</button>
+    <button type='button' id='deleteAll'>Delete All</button>
+    <input type='text' />
+    <div id="pos"></div>
+
+    <script type='text/javascript'>
+        var divNode = document.getElementById('pos');
+        var i = 1;
+
+        function add() {
+            let pNode = document.createElement('p');
+            let textNode = document.createTextNode(i+'. Item');
+            pNode.appendChild(textNode);
+            divNode.appendChild(pNode);
+            i++;
+        }
+
+        function deleteOne() {
+            if(i != 1) {
+                divNode.removeChild(divNode.lastChild);
+                i--;
+            }
+        }
+
+        function deleteAll() {
+            divNode.innerHTML = "";
+            i = 1;
+        }
+
+        let btnAdd = document.querySelector('.add');
+        let btnDeleteOne = document.querySelector('.deleteOne');
+        let btnDeleteAll = document.querySelector('#deleteAll');
+
+        btnAdd.addEventListener('click', add);
+        btnDeleteOne.addEventListener('click', deleteOne);
+        btnDeleteAll.addEventListener('click', deleteAll);
+
+        let inputNode = document.querySelector('input');
+        inputNode.addEventListener('focus', function(){
+            document.bgColor = "#cc3366";
+        });
+        inputNode.addEventListener('blur', function(){
+            document.bgColor = "#3366cc";
+        });
+    </script>
+</body>
+</html>
