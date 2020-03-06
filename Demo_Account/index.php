@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include_once("./lib/Database.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -30,8 +34,20 @@
                 case 2:
                     include("./pages/pLogin.php");
                     break;
+                case 3:
+                    include("./pages/eLogin.php");
+                    break;
+                case 4:
+                    include("./pages/eLogout.php");
+                    break;
+                case 5:
+                    include("./pages/eRegister.php");
+                    break;
+                case 6:
+                    include("./pages/pRegisterSuccess.php");
+                    break;
                 default:
-                    include("./pages/pHome.php");
+                    include("./pages/pError.php");
             }
         ?>
     </div>

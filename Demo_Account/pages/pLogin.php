@@ -2,9 +2,8 @@
     <h1 class="display-4">Please Register or Login</h1>
     <div class="row">
         <div class="col-6">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="./index.php?a=3" method="POST">
                 <fieldset>
-
                     <!-- Form Name -->
                     <legend>Login</legend>
 
@@ -40,7 +39,7 @@
             </form>
         </div>
         <div class="col-6">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="index.php?a=5" method="POST">
                 <fieldset>
 
                     <!-- Form Name -->

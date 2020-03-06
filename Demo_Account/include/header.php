@@ -20,9 +20,26 @@
             </li>
         </ul>
         <ul class="navbar-nav mt-2 mt-lg-0">
-            <li class="nav-item my-2 my-lg-2 active">
-                <a class="nav-link" href="./index.php?a=2">Login/Register</a>
-            </li>
+            <?php
+                if(isset($_SESSION["isLogin"]) == true && $_SESSION["isLogin"] == true) {
+                    ?>
+                        <li class="nav-item my-2 my-lg-2 active">
+                            <span class="nav-link">Welcome, <?php echo $_SESSION["name"]; ?> | </span>
+                        </li>
+                        <li class="nav-item my-2 my-lg-2 active">
+                            <a class="nav-link" href="./index.php?a=4">Log-out</a>
+                        </li>
+                    <?php
+                } else {
+                    ?>
+                        <li class="nav-item my-2 my-lg-2 active">
+                            <a class="nav-link" href="./index.php?a=2">Login/Register</a>
+                        </li>
+                    <?php
+                }
+            ?>
+            
+            
         </ul>
     </div>
 </nav>
