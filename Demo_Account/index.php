@@ -46,6 +46,15 @@
                 case 6:
                     include("./pages/pRegisterSuccess.php");
                     break;
+                case 7:
+                    include("./pages/pListOfPost.php");
+                    break;
+                case 8:
+                    include("./pages/eCreatePost.php");
+                    break;
+                case 9:
+                    include("./pages/eAddComment.php");
+                    break;
                 default:
                     include("./pages/pError.php");
             }
