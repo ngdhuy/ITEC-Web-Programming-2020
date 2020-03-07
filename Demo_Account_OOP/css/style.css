@@ -1,0 +1,18 @@
+#content {
+    margin: 20px auto;
+    min-height: 600px;
+}
+
+#content img {
+    width: 100%;
+}
+
+footer {
+    height: 200px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    line-height: 200px;
+}
+
+.card { margin-bottom: 20px;}
