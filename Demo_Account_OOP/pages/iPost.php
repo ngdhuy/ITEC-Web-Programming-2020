@@ -1,15 +1,16 @@
 <div class="card">
     <div class="card-header">
-        <?php echo "$id - $name"; ?>
+        <?php echo "$p->user_id - $p->user_fullname"; ?>
     </div>
     <div class="card-body">
         <blockquote class="blockquote mb-0">
             <p>
                 <?php //echo $content; ?>
                 <?php
-                    if(strlen($content) > 100)
+                    $content = $p->post_content;
+                    if(strlen($p->post_content) > 100)
                     {
-                        $content = substr($content,0,10)." ...";
+                        $content = substr($p->post_content,0,10)." ...";
                     }
                     echo $content;
                 ?>
@@ -17,15 +18,12 @@
         </blockquote>
     </div>
     <?php 
-        $s = "SELECT u.name, c.comment FROM user u, comment c WHERE u.id = c.user_id AND c.post_id = $id";
-        $re = DataProvider::executeQuery($s);
-        while($ro = mysqli_fetch_array($re)){
-            $u_name = $ro["name"];
-            $comment = $ro["comment"];
+        foreach($p->lstComment as $c){
+            
             include("./pages/iComment.php");
         }
 
-        if(isset($_SESSION["isLogin"]) && $_SESSION["isLogin"] == true) {
+        if(isset($_SESSION["user"])) {
             include("./pages/iAddComment.php");
         }
     ?>

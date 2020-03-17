@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 07, 2020 at 05:06 PM
+-- Generation Time: Mar 17, 2020 at 05:49 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.7
 
@@ -19,6 +19,55 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_acc_oop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `comment_content` varchar(1024) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `post_id`, `user_id`, `comment_content`) VALUES
+(1, 1, 2, 'TEST commnet'),
+(2, 2, 3, 'Test comment AAAAA'),
+(3, 1, 1, 'aaa'),
+(4, 1, 1, 'aaa'),
+(5, 1, 1, 'test'),
+(6, 1, 3, 'tesst user 02 aaaaaaa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_content` varchar(1024) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `user_id`, `post_content`) VALUES
+(1, 1, 'Data test 01'),
+(2, 1, 'Admin Test'),
+(3, 2, 'user 01 test'),
+(4, 3, 'usert 02 test'),
+(5, 2, 'Admin test OK 999'),
+(6, 1, 'aaaa');
 
 -- --------------------------------------------------------
 
@@ -48,6 +97,18 @@ INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `email`) VALUES
 --
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -56,6 +117,18 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`

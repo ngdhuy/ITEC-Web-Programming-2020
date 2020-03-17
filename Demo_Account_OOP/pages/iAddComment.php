@@ -6,7 +6,7 @@
         </div>
         <div class="card-body">
             <form class="form-horizontal" action="index.php?a=9" method="POST">
-                <input type="hidden" name="hdPostID" value="<?php echo $id; ?>" />
+                <input type="hidden" name="hdPostID" value="<?php echo $p->id; ?>" />
                 <div class="form-group row">
                     <div class="col-md-9">
                         <textarea id="txtComment" name="txtComment" placeholder="Comment"

@@ -1,11 +1,12 @@
 <?php 
-    if(isset($_SESSION["id"]) && isset($_POST["txtComment"])){
-        $comment = $_POST["txtComment"];
-        $user_id = $_SESSION["id"];
-        $post_id = $_POST["hdPostID"];
-
-        $sql = "INSERT INTO comment(user_id, post_id, comment) VALUES ($user_id, $post_id , '$comment')";
-        DataProvider::executeQuery($sql);
+    if(isset($_SESSION["user"]) && isset($_POST["txtComment"])){
+        $user = unserialize($_SESSION["user"]);
+        $comment = new comment();
+        $comment->comment_content = $_POST["txtComment"];
+        $comment->user_id = $user->id;
+        $comment->post_id = $_POST["hdPostID"];
+        
+        $comment->create();
         
     }
     header("location: index.php?a=7");

@@ -14,5 +14,44 @@
             mysqli_close($connection);
             return $result;
         }
+        // public function executeQuery_2($sql, $format, $parmeters) {
+        //     $mysqli = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name, $this->db_port);
+
+        //     if (mysqli_connect_errno()) {
+        //         printf("Connect failed: %s\n", mysqli_connect_error());
+        //         exit();
+        //     }
+            
+        //     $stmt = $mysqli->prepare($sql);
+            
+        //     /* create a prepared statement */
+        //     if ($stmt === FALSE) {
+        //         die("Cannot connect to DB: ".$mysqli->error);
+        //     } else {
+        //         // for($i = 0; $i < count($parmeters); $i++) {
+        //         //     echo "<div>".substr($format,$i,1)." - ".$parmeters[$i]."</div>";
+        //         //     echo $sql;
+        //         //     $stmt->bind_param(substr($format,$i,1), $parmeters[$i]);
+        //         // }
+        //         echo $sql." - ".$format;
+        //         var_dump(...$parmeters);
+                
+        //         $stmt->bind_param($format, ...$parmeters);
+        //         $stmt->bind_param()
+                
+        //         /* execute query */
+        //         $stmt->execute();
+        //         $result = $stmt->get_result();
+
+        //         /* close statement */
+        //         $stmt->close();
+        //     }
+
+        //     /* close connection */
+        //     $mysqli->close();
+            
+        //     return $result;
+        // }
+
     }
 ?>
